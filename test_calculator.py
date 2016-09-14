@@ -20,6 +20,7 @@ class TestCalculator(TestCase):
         # verify it doesn't concatenate strings
         self.assertIsNone(substraction("alpah", "beta"))
 
+# TODO build these two test cases
     def test_multiply(self):
         self.fail()
 

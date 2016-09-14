@@ -7,7 +7,6 @@
 #         self.value1 = value1
 #         self.value2 = value2
 
-# TODO code does not work with float numbers :(
 def addition(value1, value2):
     if not (isinstance(value1,str) or isinstance(value2,str)):
         return value1 + value2
