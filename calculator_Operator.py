@@ -18,9 +18,14 @@ def substraction(value1, value2):
     else: return None
 
 def multiply(value1, value2):
-    return value1 * value2
+    if not (isinstance(value1,str) or isinstance(value2, str)):
+        return value1 * value2
+    else: return None
 
 def divide(value1, value2):
-    return value1 / value2
+    if not (isinstance(value1,str) or isinstance(value2, str)):
+        return value1 / value2
+    else: return None
+
 
 # print(addition(4.7,3.5))

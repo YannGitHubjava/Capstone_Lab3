@@ -6,11 +6,11 @@ class TestCalculator(TestCase):
 
     def test_addition(self):
         # verify integer math works
-        self.assertTrue(addition(4,5)==9)
+        self.assertTrue(addition(4,5) == 9)
         # verify float math works - call 7 places close enough
         self.assertAlmostEqual(addition(4.7,3.3),8.0,delta=.000001)
         # verify it doesn't concatenate strings
-        self.assertIsNone(addition("alpah","beta"))
+        self.assertIsNone(addition("alpha","beta"))
 
     def test_substraction(self):
         # verify integer math works
@@ -18,11 +18,21 @@ class TestCalculator(TestCase):
         # verify float math works - call 7 places close enough
         self.assertAlmostEqual(substraction(4.7, 3.3), 1.4, delta=.000001)
         # verify it doesn't concatenate strings
-        self.assertIsNone(substraction("alpah", "beta"))
+        self.assertIsNone(substraction("alpha", "beta"))
 
 # TODO build these two test cases
     def test_multiply(self):
-        self.fail()
+        #
+        self.assertTrue(multiply(4,5) == 20)
+        #
+        self.assertAlmostEqual(multiply(4.7, 3.3), 15.51, delta=.0001)
+        #
+        self.assertIsNone(multiply("alpha", "beta"))
 
     def test_divid(self):
-        self.fail()
+        #
+        self.assertTrue(divide(4,5) == 0.8)
+        #
+        self.assertAlmostEqual(divide(4.7, 3.3), 1.4242, delta=.0001)
+        #
+        self.assertIsNone(divide("alpha", "beta"))
