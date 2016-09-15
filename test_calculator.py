@@ -4,6 +4,7 @@ from calculator_Operator import *
 
 class TestCalculator(TestCase):
     # for testing purposes, we want to verify the calculator object
+    # for this exercise, we are going to assume the Main() method will defend against non-numeric input.
 
     def test_addition(self):
         # verify integer math works
