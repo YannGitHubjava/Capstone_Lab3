@@ -32,4 +32,9 @@ class TestValidator(TestCase):
         self.assertFalse(is_whole_number(13.333, range(-10, 5)))
         # and check that strings return false
         self.assertFalse(is_whole_number("string"))
-        # self.assertTrue(is_whole_number("7"))
+        # and verify it can cope with stringlike numbers
+        self.assertTrue(is_whole_number("7"))
+        self.assertFalse(is_whole_number("7.5"))
+        self.assertFalse(is_whole_number(".332432"))
+        # assume that if people enter a period with no tail, they meant to enter a float:
+        self.assertFalse(is_whole_number("3."))

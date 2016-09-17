@@ -11,11 +11,14 @@ def isNumeric(tocheck):
 
 def is_whole_number(number,valid_range = None):
     try:
-        number = int(number)
+        number_as_int = int(number)
         # if parsing as integer does not produce an error, check if it's in range if a range has been given
-        if valid_range and number not in valid_range:
+        if valid_range and number_as_int not in valid_range:
             _min = min(valid_range)
             _max = max(valid_range)
+            return False
+        # Check if it's a float:  convert to string and check if there's a period in it
+        if len(str(number).split('.')) > 1:
             return False
         # if we get to here, we can return true
         return True
