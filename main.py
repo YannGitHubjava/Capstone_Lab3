@@ -47,7 +47,7 @@ def operation_menu(calculation):
 
 def main():
     """"
-    Entry point get 2 numbers to work with and then go to the operation menue
+    Entry point get 2 numbers to work with and then go to the operation menu
 
     """
     quit_operation = True
