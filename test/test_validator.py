@@ -32,3 +32,4 @@ class TestValidator(TestCase):
         self.assertFalse(is_whole_number(13.333, range(-10, 5)))
         # and check that strings return false
         self.assertFalse(is_whole_number("string"))
+        # self.assertTrue(is_whole_number("7"))

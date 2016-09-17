@@ -2,6 +2,13 @@
 from calculator_Operator import *
 from validator import *
 
+CHOICE_ADD = '1'
+CHOICE_SUB = '2'
+CHOICE_MUL = '3'
+CHOICE_DIV = '4'
+CHOICE_RESTART = '5'
+CHIOCE_QUIT = '6'
+
 def operation_menu(calculation):
 
     menu_string = (
@@ -18,24 +25,23 @@ def operation_menu(calculation):
 
     menu_choice = input(menu_string)
     while not is_whole_number(menu_choice, range(1, 7)):
-        print("Please make a valid selection from the menu.")
-        menu_choice = input(menu_string)
-    menu_choice = int(menu_choice)
-    if menu_choice == 1:
+        menu_choice = input("Please make a valid selection from the menu.")
+
+    if menu_choice == CHOICE_ADD:
         print("Your result is " + str(calculation.addition()))
         return True
-    elif menu_choice == 2:
+    elif menu_choice == CHOICE_SUB:
         print("Your result is " + str(calculation.substraction()))
         return True
-    elif menu_choice == 3:
+    elif menu_choice == CHOICE_MUL:
         print("Your result is " + str(calculation.multiply()))
         return True
-    elif menu_choice == 4:
+    elif menu_choice == CHOICE_DIV:
         print("Your result is " + str(calculation.divide()))
         return True
-    elif menu_choice == 5:
+    elif menu_choice == CHOICE_RESTART:
         return True
-    elif menu_choice == 6:
+    elif menu_choice == CHIOCE_QUIT:
         return False
 
 
