@@ -16,23 +16,27 @@ def operation_menu(calculation):
         '\nEnter Selection'
     ).format(calculation.value1, calculation.value2)
 
-    while True:
-        menu_choice = is_whole_number(menu_string, range(1, 7))
-
-        if menu_choice == 1:
-            print("Your result is " + str(calculation.addition()))
-        elif menu_choice == 2:
-            print("Your result is " + str(calculation.substraction()))
-        elif menu_choice == 3:
-            print("Your result is " + str(calculation.multiply()))
-        elif menu_choice == 4:
-            print("Your result is " + str(calculation.divide()))
-        elif menu_choice == 5:
-            return True
-            break
-        elif menu_choice == 6:
-            return False
-            break
+    menu_choice = input(menu_string)
+    while not is_whole_number(menu_choice, range(1, 7)):
+        print("Please make a valid selection from the menu.")
+        menu_choice = input(menu_string)
+    menu_choice = int(menu_choice)
+    if menu_choice == 1:
+        print("Your result is " + str(calculation.addition()))
+        return True
+    elif menu_choice == 2:
+        print("Your result is " + str(calculation.substraction()))
+        return True
+    elif menu_choice == 3:
+        print("Your result is " + str(calculation.multiply()))
+        return True
+    elif menu_choice == 4:
+        print("Your result is " + str(calculation.divide()))
+        return True
+    elif menu_choice == 5:
+        return True
+    elif menu_choice == 6:
+        return False
 
 
 def main():
@@ -42,8 +46,14 @@ def main():
     """
     quit_operation = True
     while quit_operation:
-        value1 = is_whole_number("Enter your first number number")
-        value2 = is_whole_number("Enter your Second number number")
+        value1 = input("Enter your first number\n")
+        while not isNumeric(value1):
+            value1 = input("You must enter a number.  Please enter a whole number.\n")
+        value2 = input("Enter your Second number\n")
+        while not isNumeric(value2):
+            value2 = input("You must enter a number.  Please enter a whole number.\n")
+        value1 = float(value1)
+        value2 = float(value2)
         calculation = Calculator(value1, value2)
 
         if not calculation:
