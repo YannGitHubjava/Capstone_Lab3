@@ -28,16 +28,16 @@ def operation_menu(calculation):
         menu_choice = input("Please make a valid selection from the menu.")
 
     if menu_choice == CHOICE_ADD:
-        print("Your result is " + str(calculation.addition()))
+        print("Your result is: " + str(calculation.addition()))
         return True
     elif menu_choice == CHOICE_SUB:
-        print("Your result is " + str(calculation.substraction()))
+        print("Your result is: " + str(calculation.substraction()))
         return True
     elif menu_choice == CHOICE_MUL:
-        print("Your result is " + str(calculation.multiply()))
+        print("Your result is: " + str(calculation.multiply()))
         return True
     elif menu_choice == CHOICE_DIV:
-        print("Your result is " + str(calculation.divide()))
+        print("Your result is: " + str(calculation.divide()))
         return True
     elif menu_choice == CHOICE_RESTART:
         return True

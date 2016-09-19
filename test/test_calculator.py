@@ -29,5 +29,7 @@ class TestCalculator(TestCase):
         self.assertTrue(Calculator(4,5).divide() == 0.8)
         # verify float math works - call 4 places close enough
         self.assertAlmostEqual(Calculator(4.7, 3.3).divide(), 1.4242, delta=.0001)
+        # verify it handles DivByZero gracefully
+        self.assertTrue(Calculator(9,0).divide() == "[Unable to divide by zero.]")
 
 

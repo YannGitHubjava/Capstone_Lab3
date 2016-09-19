@@ -18,5 +18,8 @@ class Calculator:
         return self.value1 * self.value2
 
     def divide(self):
-        return self.value1 / self.value2
+        try:
+            return self.value1 / self.value2
+        except ZeroDivisionError:
+            return "[Unable to divide by zero.]"
 
